@@ -15,7 +15,7 @@ using Emgu.CV.Util;
 using System.Threading;
 using Emgu.CV.OCR; //модуль оптического распознавания символов
 
-namespace laba_3
+namespace lab3
 {
     public partial class Form1 : Form
     {
