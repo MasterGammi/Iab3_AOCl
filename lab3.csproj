@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6F929BCC-7D9A-4592-9645-77767AA65CEF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>laba_3</RootNamespace>
-    <AssemblyName>laba_3</AssemblyName>
+    <RootNamespace>lab3</RootNamespace>
+    <AssemblyName>lab3</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -73,6 +73,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
