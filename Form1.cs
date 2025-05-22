@@ -88,10 +88,9 @@ namespace lab3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // инициализация веб-камеры
             capture = new VideoCapture();
             capture.ImageGrabbed += ProcessFrame;
-            capture.Start(); // начало обработки видеопотока
+            capture.Start();
         }
         private void ProcessFrame(object sender, EventArgs e)
         {
@@ -103,13 +102,12 @@ namespace lab3
 
         public void button3_Click(object sender, EventArgs e)
         {
-           // Image<Bgr, byte> image = frame.ToImage<Bgr, byte>();
             capture.Stop();
             faces.Clear();
             
 
             using (CascadeClassifier face = new
-            CascadeClassifier("D:\\haarcascade_frontalface_default.xml"))
+            CascadeClassifier("D:\\...xml"))
             {
                 using (Mat ugray = new Mat())
                 {
@@ -135,11 +133,10 @@ namespace lab3
             Mat frame = CvInvoke.Imread(openFileDialog.FileName, ImreadModes.Unchanged);
             Image<Bgra, byte> res = imagewithface.Convert<Bgra,byte>();
 
-            foreach (Rectangle rect in faces) //для каждого лица
+            foreach (Rectangle rect in faces)
             {
-                res.ROI = rect; //для области содержащей лицо
-                small = frame.ToImage<Bgra, byte>().Resize(rect.Width, rect.Height,Inter.Nearest); //создание
-                               //копирование изображения small на изображение res с использованием маски копирования mask
+                res.ROI = rect;
+                small = frame.ToImage<Bgra, byte>().Resize(rect.Width, rect.Height,Inter.Nearest);
                 CvInvoke.cvCopy(small, res, small.Split()[3]);
                 res.ROI = System.Drawing.Rectangle.Empty;
             }
